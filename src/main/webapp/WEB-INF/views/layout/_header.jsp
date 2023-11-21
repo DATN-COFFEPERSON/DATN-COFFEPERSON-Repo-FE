@@ -45,10 +45,13 @@
 	                        	<li><a href="/logout">Đăng xuất</a></li>
 	                        	<li><a href="/order/list">Đơn hàng</a></li>
 	                            <li><a href="#">Sản phẩm yêu thích</a></li>
+	                             
 	                    </c:if>
 	                    <c:if test="${empty sessionScope.user }">
 	                            <li><a href="/login">Login</a></li>
 	                            <li><a href="/register">Tạo tài khoản</a></li>
+	                           
+	                              
 	                    </c:if>
 	                    <c:if test="${not empty sessionScope.userAdmin}">
 		                    <li><a href="/admin">Admin</a></li>
@@ -115,16 +118,16 @@
 									class="anm anm-angle-down-l"></i></a></li>
 										<li class="lvl1 parent megamenu"><a href="/">Khuyến Mãi<i
 									class="anm anm-angle-down-l"></i></a></li>
-										<li class="lvl1 parent megamenu"><a href="/">Contact <i
+										<li class="lvl1 parent megamenu"><a href="/contact">Contact <i
 									class="anm anm-angle-down-l"></i></a></li>
-						<!--	<li class="lvl1 parent megamenu"><a href="#">Thương
+							<!--<li class="lvl1 parent megamenu"><a href="#">Thương
 									hiệu <i class="anm anm-angle-down-l"></i>
 							</a>
 								
 							<li class="lvl1"><a href="#"><b>Buy Now!</b> <i
-									class="anm anm-angle-down-l"></i></a></li>
+									class="anm anm-angle-down-l"></i></a></li>-->
 						</ul>
-						-->
+						
 					</nav>
 					<!--End Desktop Menu-->
 				</div>

@@ -42,11 +42,9 @@
 			<div class="collection-header">
 				<div class="collection-hero">
 					<div class="collection-hero__image">
-						
+					<img src="/assets/images/BN1.jpg" >
 					</div>
-					<div class="collection-hero__title-wrapper">
-						<h1 class="collection-hero__title page-width">LIST PRODUCT</h1>
-					</div>
+					
 				</div>
 			</div>
 			<!--End Collection Banner-->
