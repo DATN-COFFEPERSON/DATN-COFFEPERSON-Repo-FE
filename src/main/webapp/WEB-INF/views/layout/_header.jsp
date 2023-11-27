@@ -114,7 +114,7 @@
 											</ul></li>
 									</ul>
 								</div></li>
-									<li class="lvl1 parent megamenu"><a href="/">About <i
+									<li class="lvl1 parent megamenu"><a href="/blog">Blog <i
 									class="anm anm-angle-down-l"></i></a></li>
 										<li class="lvl1 parent megamenu"><a href="/">Khuyến Mãi<i
 									class="anm anm-angle-down-l"></i></a></li>

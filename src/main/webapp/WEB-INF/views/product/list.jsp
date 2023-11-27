@@ -79,13 +79,13 @@
 								</div>
 								<form action="">
 									<button formaction="/product/list/price/under100"
-										class="btn mb-2 btn--secondary">Dưới 100K</button>
+										class="btn mb-2 btn--secondary">Dưới 30kK</button>
 									<button formaction="/product/list/price/100-300"
-										class="btn mb-2 btn--secondary">Từ 100K - 300K</button>
+										class="btn mb-2 btn--secondary">Từ 30k - 60k</button>
 									<button formaction="/product/list/price/300-900"
-										class="btn mb-2 btn--secondary">Từ 300K - 900K</button>
+										class="btn mb-2 btn--secondary">Từ 60k - 90k</button>
 									<button formaction="/product/list/price/over900"
-										class="btn mb-2 btn--secondary">Trên 900K</button>
+										class="btn mb-2 btn--secondary">Trên 100k</button>
 								</form>
 							</div>
 							<!--End Price Filter-->
@@ -93,7 +93,7 @@
 							<!--Brand-->
 							<div class="sidebar_widget filterBox filter-widget">
 								<div class="widget-title">
-									<h2>Thương Hiệu</h2>
+									<h2>Các loại nước khác</h2>
 								</div>
 								<ul>
 									<form action="/product/list/brand">

@@ -45,7 +45,18 @@ public class HomeController {
 		model.addAttribute("db", pService.findProductByCreateDateDESC());
 		return "home/index";
 	}
-
+	@RequestMapping("/contact")
+	public String contact(Model model) {
+		// load ds product xep theo ngay tao
+		model.addAttribute("db", pService.findProductByCreateDateDESC());
+		return "/contact";
+	}
+	@RequestMapping("/blog")
+	public String blog(Model model) {
+		// load ds product xep theo ngay tao
+		model.addAttribute("db", pService.findProductByCreateDateDESC());
+		return "/blog";
+	}
 	@GetMapping("/brand/list")
 	public String brandList(Model model) {
 		return "brand/list";
@@ -107,12 +118,13 @@ public class HomeController {
 					if(this.checkAdmin(account)) {
 						session.set("userAdmin", "admin");
 					}
-					model.addAttribute("message", "Login success");
+					model.addAttribute("message", "Đăng nhập thành công");
 //				}
+					return "redirect:/#";	
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			model.addAttribute("message", "Invalid username");
+			model.addAttribute("message", "Sai thông tin tài khoản");
 		}
 		return "login";
 	}
@@ -161,7 +173,7 @@ public class HomeController {
 			model.addAttribute("message", "Mật khẩu mới đã được gửi đến mail "+email+"***");
 		} catch (Exception e) {
 			// TODO: handle exception
-			model.addAttribute("message", "Invalid Username");
+			model.addAttribute("message", "Tên người dùng không hợp lệ");
 		}
 		return "forgot";
 	}

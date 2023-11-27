@@ -3,7 +3,7 @@
         <!-- begin page title -->
         <div class="d-block d-lg-flex flex-nowrap align-items-center">
             <div class="page-title mr-4 pr-4 border-right">
-                <h1>User Manager</h1>
+                <h1>Quản lý người dùng</h1>
             </div>
 
             <div class="ml-auto d-flex align-items-center secondary-menu text-center">
@@ -20,7 +20,7 @@
         <div class="card card-statistics">
             <div class="card-header">
                 <div class="card-heading">
-                    <h4 class="card-title">Edit Account</h4>
+                    <h4 class="card-title">Sửa Tài khoản</h4>
                 </div>
             </div>
             <div class="card-body">
@@ -100,7 +100,7 @@
                 <div class="card-heading">
                     <div class="row">
                         <div class="col-md-6 text-left">
-                            <h4 class="card-title">Account Table</h4>
+                            <h4 class="card-title">Bảng Tài khoản</h4>
                         </div>
                         <div class="col-md-6">
                             <form class="justify-content-end">
@@ -119,8 +119,8 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Fullname</th>
+                                <th scope="col">Tên</th>
+                                <th scope="col">Tên đầy đủ</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Active</th>
                                 <th scope="col"></th>
@@ -134,8 +134,8 @@
                                 <td>{{a.email}}</td>
                                 <td>{{a.activated?'Yes':'No'}}</td>
                                 <td class="text-right">
-                                    <button ng-click="edit(a.username)" class="btn btn-primary">Edit</button>
-                                    <button ng-click="delete(a.username)" class="btn btn-dark">Delete</button>
+                                    <button ng-click="edit(a.username)" class="btn btn-primary">Sửa</button>
+                                    <button ng-click="delete(a.username)" class="btn btn-dark">Xóa</button>
 
                                 </td>
                             </tr>
