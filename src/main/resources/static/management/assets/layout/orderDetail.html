@@ -1,0 +1,192 @@
+<div class="page section-header text-center">
+    <div class="page-title">
+        <div class="wrapper">
+            <h1 class="page-width">CHI TIẾT ĐƠN HÀNG</h1>
+            {{cart}}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
+            <div class="customer-box returning-customer">
+                <h3>
+                    <i class="icon anm anm-user-al"></i>
+                    <a
+                            href="#customer-login"
+                            id="customer"
+                            class="text-white text-decoration-underline"
+                            data-toggle="collapse"
+                    ></a>
+                </h3>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
+            <div class="customer-box customer-coupon">
+                <h3 class="font-15 xs-font-13">
+                    <i class="icon anm anm-gift-l"></i>
+                </h3>
+                <div id="have-coupon" class="collapse coupon-checkout-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row billing-fields">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 sm-margin-30px-bottom">
+            <div class="create-ac-content bg-light-gray padding-20px-all">
+                <form name="frmOrder">
+                    <fieldset>
+                        <div class="row">
+                            <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                <label for="input-status">Trạng thái</label>
+                                <input
+                                        id="input-status"
+                                        disabled="disabled"
+                                        value="{{order.status==0?'Chưa thanh toán':order.status==1?'Đã thanh toán':'Đã hủy đơn'}}"
+                                        rows="3"
+                                        type="text"
+                                />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="row">
+                            <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                <label for="input-type">Hình thức đơn</label>
+                                <input
+                                        id="input-type"
+                                        disabled="disabled"
+                                        value="{{order.usingTable==true?'Đang sử dụng bàn '+order.cfTable.id :order.usingTable==false && order.cfTable != null?'Đã sử dụng bàn '+order.cfTable.id:'Mua mang đi'}}"
+                                        rows="3"
+                                        type="text"
+                                />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="row">
+                            <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                <label for="input-company">Ghi chú</label>
+                                <textarea
+                                        id="input-company"
+                                        disabled="disabled"
+                                        class="form-control resize-both"
+                                        rows="3"
+                                ></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="your-order-payment">
+                <div class="your-order">
+                    <h2 class="order-title mb-4">Đơn hàng của bạn</h2>
+
+                    <div class="table-responsive-sm order-table">
+                        <table
+                                class="bg-white table table-bordered table-hover text-center"
+                        >
+                            <thead>
+                            <tr>
+                                <th class="text-left">Sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Tổng cộng</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="o in orderDetails">
+                                <th scope="row">{{$index +1}}</th>
+                                <td class="text-left">{{o.product.name}}</td>
+                                <td>{{o.price}}</td>
+                                <td>{{o.quantity}}</td>
+                                <td>{{o.price * o.quantity}}</td>
+                            </tr>
+                            </tbody>
+                            <tfoot class="font-weight-600">
+                            <tr>
+                                <td colspan="4" class="text-right font-weight-bold">
+                                    Thanh toán
+                                </td>
+                                <td class="font-weight-bold">{{order.total}}</td>
+                            </tr>
+                            <div class="text-right">
+                                <button
+                                        ng-disabled="order.status != 0"
+                                        ng-click="changeStatus(order.id,1)"
+                                        class="btn btn-primary"
+                                >
+                                    Thanh toán
+                                </button>
+                                <button
+                                        ng-disabled="order.status != 0"
+                                        ng-click="changeStatus(order.id,-1)"
+                                        class="btn btn-dark"
+                                >
+                                    Xóa đơn
+                                </button>
+                            </div>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    body,
+    label,
+    input {
+        color: black;
+    }
+
+    .app-main .container-fluid {
+        padding: 70px 150px 0px 150px !important;
+    }
+
+    .create-ac-content {
+        border: 1px solid #ccc;
+        border-radius: 10px; /* Điều chỉnh độ cong của góc */
+        padding: 20px;
+    }
+
+    .create-ac-content fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group textarea:focus {
+        border-color: #66afe9;
+        outline: none;
+    }
+</style>
